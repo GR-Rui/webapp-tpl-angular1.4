@@ -1,0 +1,58 @@
+<div class="page-container" data-ng-controller="InvestCtrl">
+  <section id="skin">
+    <div class="invest">
+      <div class="invest_title">
+        <ul>
+          <li ng-class="{'current':currentTab==1}" data-ng-click="setTab(1)">产品</li>
+          <li ng-class="{'current':currentTab==2}" data-ng-click="setTab(2)">散标</li>
+          <li ng-class="{'current':currentTab==3}" data-ng-click="setTab(3)">债权转让</li>
+        </ul>
+        <h2 class="count_btn" data-ng-click="toggleCal()">理财计算器</h2>
+      </div>
+      <div class="invest_info">
+        <div ng-show="currentTab==1" class="invest_product">
+          <div class="inv_proinfo"><a ui-sref="invest-product-details">产品1</a></div>
+          <div class="inv_proinfo"><a ui-sref="invest-product-details">产品2</a></div>
+        </div>
+        <div ng-show="currentTab==2" class="invest_tender invest_product">
+          <div class="inv_proinfo"><a ui-sref="invest-product-details">产品1</a></div>
+          <div class="inv_proinfo"><a ui-sref="invest-product-details">产品2</a></div>
+        </div>
+        <div ng-show="currentTab==3" class="invest_claims invest_product">
+          <div class="inv_proinfo"><a ui-sref="invest-product-details">转让1</a></div>
+          <div class="inv_proinfo"><a ui-sref="invest-product-details">转让2</a></div>
+        </div>
+      </div>
+      <!--计算器弹出-->
+      <div class="calculate" ng-show="isShowCal">
+        <div class="calculate_title">
+          <h3>计算机</h3>
+          <span class="close" data-ng-click="toggleCal()">X</span></div>
+        <div class="calculate_info">
+          <form>
+            <ul>
+              <li><span>投资金额</span>
+                <input type="text" />
+              </li>
+              <li><span>投资期限</span>
+                <input type="text" />
+              </li>
+              <li><span>预期年化率</span>
+                <input type="text" />
+              </li>
+              <li><span>还款方式</span>
+                <select>
+                  <option>还款方式</option>
+                  <option>还款方式</option>
+                </select>
+              </li>
+            </ul>
+            <div class="calculate_btn"><input class="income_count" type="button" value="计算收益" /><input class="count_reset" type="reset" value="清除"></div>
+            <h4>预期收益</h4>
+            <h5><p>预期收益</p><p>本息合计</p></h5>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
