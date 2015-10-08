@@ -19,7 +19,8 @@ var Site = angular.module('Site', [
   'SiteFilters'
 ]);
 
-Site.config( [ '$stateProvider', '$urlRouterProvider',function ($stateProvider, $urlRouterProvider) {
+Site.config( [ '$stateProvider', '$urlRouterProvider', '$locationProvider',
+  function ($stateProvider, $urlRouterProvider, $locationProvider) {
   "use strict";
   $stateProvider
     .state('invest', {url: '/invest', templateUrl: 'views/invest.html', controller: 'InvestCtrl'})
@@ -27,5 +28,7 @@ Site.config( [ '$stateProvider', '$urlRouterProvider',function ($stateProvider, 
     .state('register', {url: '/register', templateUrl: 'views/register.html', controller: 'HomeCtrl'})
     .state('home', {url: '/home', templateUrl: 'views/home.html', controller: 'HomeCtrl'});
   $urlRouterProvider.otherwise('/home');
-
+  if (window.history && window.history.pushState) {
+    $locationProvider.html5Mode(true).hashPrefix('!');
+  }
 }]);
