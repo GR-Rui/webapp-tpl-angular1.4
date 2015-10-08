@@ -1,5 +1,5 @@
 {
-  "name": "commonwebapp",
+  "name": "Site",
   "private": true,
   "devDependencies": {
     "grunt": "^0.4.5",

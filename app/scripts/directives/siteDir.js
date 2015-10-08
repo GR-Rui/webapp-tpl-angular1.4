@@ -2,6 +2,7 @@
  * Created by ruigao on 4/25/15.
  */
 Site.directive('csSelect', function () {
+  "use strict";
   return {
     require: '^stTable',
     template: '<input type="checkbox"/>',
