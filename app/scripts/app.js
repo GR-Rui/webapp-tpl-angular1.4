@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc overview
- * @name commonWebappApp
+ * @name webapp
  * @description
- * # commonWebappApp
+ * # webapp
  *
  * Main module of the application.
  */
